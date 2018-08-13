@@ -8,6 +8,6 @@
 
 return [
   'host'=>'110.23.45.13',
-    'name'=>'jm_test',
+    'name'=>'jm_dev',
     'password'=>'js'
 ];
