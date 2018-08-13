@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+
+<script>
+    window.addEventListener("beforeunload", function (e) {
+        console.log(222)
+        var confirmationMessage = '确定离开此页吗？本页不需要刷新或后退';
+        (e || window.event).returnValue = confirmationMessage;     // Gecko and Trident
+        return confirmationMessage;                                // Gecko and WebKit
+    });
+</script>
+
+
+</body>
+</html>
