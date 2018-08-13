@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <ul  v-bind:key="reversedMessage()">
+        <li is="todo-item"></li>
+    </ul>
+</div>
+asdfasdf
+</body>
+<script>
+
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            param1:''
+        },
+        components:{
+            'todo-item':{
+                template:'<li>{{ name }},,,{{version}}</li>',
+                data:function(){
+                    return {
+                        name:'222',
+                        version:333
+                    }
+                }
+            }
+        },
+        methods:{
+            reversedMessage:function() {
+                axios.get('http://lzs.wei.com/web_test/index.php').then(
+                        (res) => {this.param1 = res.data}
+                    ).catch(function(error) {
+                        console.log(error)
+                })
+            }
+        }
+    })
+
+
+</script>
+</html>
